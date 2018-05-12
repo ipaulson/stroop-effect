@@ -11776,58 +11776,16 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Analyzing-the-Stroop-Effect">Analyzing the Stroop Effect<a class="anchor-link" href="#Analyzing-the-Stroop-Effect">&#182;</a></h3><p>Perform the analysis in the space below. Remember to follow <a href="https://docs.google.com/document/d/1-OkpZLjG_kX9J6LIQ5IltsqMzVWjh36QpnP2RYpVdPU/pub?embedded=True">the instructions</a> and review the <a href="https://review.udacity.com/#!/rubrics/71/view">project rubric</a> before submitting. Once you've completed the analysis and write-up, download this file as a PDF or HTML file, upload that PDF/HTML into the workspace here (click on the orange Jupyter icon in the upper left then Upload), then use the Submit Project button at the bottom of this page. This will create a zip file containing both this .ipynb doc and the PDF/HTML doc that will be submitted for your project.</p>
-<p><strong>(1) What is the independent variable? What is the dependent variable?</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The independent variable is the condition, which is either congruent or incongruent. The dependent variable is the  time to complete the task.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>(2) What is an appropriate set of hypotheses for this task? Specify your null and alternative hypotheses, and clearly define any notation used. Justify your choices.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I expect that response time will be longer under the incongruent condition:</p>
-<p><strong>Null hypothesis</strong></p>
-<p>$ \mu_i \leq \mu_c $</p>
-<p><strong>Alternative hypothesis</strong></p>
-<p>$ \mu_i &gt; \mu_c $</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>(3) Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability. The name of the data file is 'stroopdata.csv'.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform the analysis here</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -11837,7 +11795,6 @@ div#notebook {
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;stroopdata.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12005,6 +11962,77 @@ div#notebook {
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>(1) What is the independent variable? What is the dependent variable?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The independent variable is the condition, which is either congruent or incongruent. The dependent variable is the  time to complete the task.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>(2) What is an appropriate set of hypotheses for this task? Specify your null and alternative hypotheses, and clearly define any notation used. Justify your choices.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I expect that response time will be longer under the incongruent condition. In order to test, the following hypotheses are put in place:</p>
+<p><strong>Null hypothesis</strong>: Mean response time for the population under the incongruent condition ($ \mu_i $) will not be significantly different than the mean repsponse time for the population ($ \mu_c $) under the congruent condition:</p>
+<p>$ \mu_i \leq \mu_c $</p>
+<p><strong>Alternative hypothesis</strong>: Mean response time for the population under incongruent condition will be greater than the mean response time for the population under the congruent condition:</p>
+<p>$ \mu_i &gt; \mu_c $</p>
+<p>A paired t-test will be used. This test relies on the assumption that the units between tests are similar (as far as I can tell from the data they are) and that the population is normal. I should probably note that a slightly larger population size would better support the validity of this assumption. However, I'm still going to make the assumption.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>(3) Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability. The name of the data file is 'stroopdata.csv'.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform the analysis here</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
 <div class="prompt"></div>
@@ -12106,7 +12134,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build the visualizations here</span>
@@ -12145,7 +12173,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
@@ -12189,7 +12217,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The box plots reiterate that the descriptive values are all higher for the incongruent case. Some outliers can also be observed in the box plot for the incongruent cases.</p>
-<p>The outliers are also visible in the distribution for incongruent cases. The distributions for both the congruent cases and the incongruent cases are both skewed to the right, but the times can still be seen to be greater.</p>
+<p>The outliers are also visible in the distribution for incongruent cases. The distributions for both the congruent cases and the incongruent cases are both skewed to the right (but close to normal). The times can still be seen to be greater.</p>
 
 </div>
 </div>
@@ -12205,7 +12233,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -12222,7 +12250,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12239,7 +12267,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the t-critical value</span>
@@ -12257,7 +12285,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12285,7 +12313,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the differences between congruent and incongruent times</span>
@@ -12305,7 +12333,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12322,7 +12350,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Standard deviation of differences</span>
@@ -12340,7 +12368,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12357,7 +12385,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># t-statistic </span>
@@ -12375,7 +12403,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12392,7 +12420,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t_stat</span> <span class="o">&gt;</span> <span class="n">t_crit</span>
@@ -12408,7 +12436,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12445,7 +12473,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For some reason, being able to read the words slows down reaction time when trying to name the color. For instance: I tried these tasks and I was slower (as expected) in the incongruent task: however, if I tried these tasks in a different language (especially one with a different alphabet), I suspect my time would be similar in both cases.</p>
+<p>For some reason, being able to read the words slows down reaction time when trying to name the color. Or to put it another way: people unconsciously read a word before determing the color it is written in.</p>
+<p>For instance: I tried these tasks and I was slower (as expected) in the incongruent task: however, if I tried these tasks in a different language (especially one with a different alphabet), I suspect my time would be similar in both cases because I would not be able to unconsciously read the words.</p>
 
 </div>
 </div>
@@ -12459,6 +12488,8 @@ div#notebook {
 <p><a href="https://newonlinecourses.science.psu.edu/statprogram/node/137/">https://newonlinecourses.science.psu.edu/statprogram/node/137/</a></p>
 <p><a href="http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/t-score-vs-z-score/">http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/t-score-vs-z-score/</a></p>
 <p><a href="https://www.youtube.com/watch?v=gBm0QMav9ZM">https://www.youtube.com/watch?v=gBm0QMav9ZM</a></p>
+<p><a href="http://influentialpoints.com/Training/paired_t-test-principles-properties-assumptions.htm">http://influentialpoints.com/Training/paired_t-test-principles-properties-assumptions.htm</a></p>
+<p><a href="http://www2.psychology.uiowa.edu/faculty/mordkoff/GradStats/part%201/I.07%20normal.pdf">http://www2.psychology.uiowa.edu/faculty/mordkoff/GradStats/part%201/I.07%20normal.pdf</a></p>
 
 </div>
 </div>
